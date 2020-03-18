@@ -1,0 +1,8 @@
+--- a/src/main/java/org/apache/pdfbox/pdmodel/interactive/form/PDAcroForm.java
++++ b/src/main/java/org/apache/pdfbox/pdmodel/interactive/form/PDAcroForm.java
+@@ -355,2 +355,5 @@
+         COSString defaultAppearance = (COSString) dictionary.getItem(COSName.DA);
++        if (defaultAppearance == null) {
++            return new String();
++        }
+         return defaultAppearance.getString();
